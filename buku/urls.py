@@ -23,7 +23,7 @@ from log.forms import LoginForm
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('log.urls')),
-    url(r'', include('allauth.urls')),
+    url(r'accounts/', include('allauth.urls')),
     url(r'^login/$', views.login, {'template_name': 'login.html', 'authentication_form': LoginForm}),
     url(r'^logout/$', views.logout, {'next_page': '/login'}),
       
